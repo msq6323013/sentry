@@ -12,7 +12,7 @@ import Pagination from '../components/pagination';
 import CompactIssue from '../components/compactIssue';
 import EventUserReport from '../components/events/userReport';
 import {t, tct} from '../locale';
-import withEnvironment from '../utils/withEnvironment';
+import withEnvironmentInQueryString from '../utils/withEnvironmentInQueryString';
 
 const ProjectUserReports = createReactClass({
   displayName: 'ProjectUserReports',
@@ -97,7 +97,7 @@ const ProjectUserReports = createReactClass({
     });
 
     const query = this.state.environment
-      ? {environment: this.state.environment.urlRoutingName}
+      ? {environment: this.state.environment.name}
       : null;
 
     this.api.request(this.getEndpoint(), {
@@ -257,4 +257,4 @@ const ProjectUserReports = createReactClass({
   },
 });
 
-export default withEnvironment(ProjectUserReports);
+export default withEnvironmentInQueryString(ProjectUserReports);
