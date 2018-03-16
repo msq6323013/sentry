@@ -21,10 +21,12 @@ exports[`ProjectTeamsSettings render() renders 1`] = `
             items={
               Array [
                 Object {
-                  "label": <TeamDropdownElement>
+                  "label": <div
+                    className="css-tkw8z0-verticalPaddingSmall css-1con10a-horizontalPaddingExtaSmall"
+                  >
                     #
                     team-slug-2
-                  </TeamDropdownElement>,
+                  </div>,
                   "searchKey": "team-slug-2",
                   "value": "2",
                 },
@@ -33,21 +35,72 @@ exports[`ProjectTeamsSettings render() renders 1`] = `
             menuHeader={
               <StyledTeamsLabel>
                 Teams
-                <StyledCreateTeamLink
+                <Link
+                  style={
+                    Object {
+                      "float": "right",
+                    }
+                  }
                   to="/organizations/org-slug/teams/new/"
                 >
                   Create Team
-                </StyledCreateTeamLink>
+                </Link>
               </StyledTeamsLabel>
             }
             onSelect={[Function]}
           />
         </div>
       </PanelHeader>
+      <PanelHeader
+        hasButtons={true}
+        key="header"
+      >
+        <PanelHeaderContent>
+          <div>
+            Team
+          </div>
+          <div>
+            <DropdownAutoComplete
+              alignMenu="right"
+              items={
+                Array [
+                  Object {
+                    "label": <div
+                      className="css-tkw8z0-verticalPaddingSmall css-1con10a-horizontalPaddingExtaSmall"
+                    >
+                      #
+                      team-slug-2
+                    </div>,
+                    "searchKey": "team-slug-2",
+                    "value": "2",
+                  },
+                ]
+              }
+              menuHeader={
+                <StyledTeamsLabel>
+                  Teams
+                  <Link
+                    style={
+                      Object {
+                        "float": "right",
+                      }
+                    }
+                    to="/organizations/org-slug/teams/new/"
+                  >
+                    Create Team
+                  </Link>
+                </StyledTeamsLabel>
+              }
+              onSelect={[Function]}
+            />
+          </div>
+        </PanelHeaderContent>
+      </PanelHeader>
       <PanelBody
         direction="column"
         disablePadding={true}
         flex={false}
+        key="body"
       >
         <TeamRow
           access={

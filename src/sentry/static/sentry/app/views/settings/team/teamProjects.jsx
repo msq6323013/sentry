@@ -2,6 +2,7 @@ import React from 'react';
 import createReactClass from 'create-react-class';
 import Reflux from 'reflux';
 import styled from 'react-emotion';
+import classNames from 'classnames';
 
 import ApiMixin from '../../../mixins/apiMixin';
 import {addErrorMessage, addSuccessMessage} from '../../../actionCreators/indicator';
@@ -18,6 +19,7 @@ import PanelItem from '../components/panelItem';
 import PanelHeader from '../components/panelHeader';
 import PanelBody from '../components/panelBody';
 import InlineSvg from '../../../components/inlineSvg';
+import {verticalPaddingSmall, horizontalPaddingExtaSmall} from '../../../styles/padding';
 
 import {sortProjects} from '../../../utils';
 import {t} from '../../../locale';
@@ -121,42 +123,36 @@ const TeamProjects = createReactClass({
         return {
           value: p.id,
           searchKey: p.slug,
-          label: <ProjectListElement>{p.slug}</ProjectListElement>,
+          label: (
+            <div className={classNames(verticalPaddingSmall, horizontalPaddingExtaSmall)}>
+              {p.slug}
+            </div>
+          ),
         };
       });
 
     return (
-      <div>
-        <Panel>
-          <PanelHeader hasButtons>
-            {t('Projects')}
-            <div style={{textTransform: 'none'}}>
-              <DropdownAutoComplete
-                items={otherProjects}
-                onSelect={this.handleProjectSelected}
-              >
-                {({isOpen, selectedItem}) => (
-                  <DropdownButton isOpen={isOpen} size="xsmall">
-                    {t('Add Project')}
-                  </DropdownButton>
-                )}
-              </DropdownAutoComplete>
-            </div>
-          </PanelHeader>
-          <PanelBody>{this.projectPanelcontents(linkedProjects)}</PanelBody>
-        </Panel>
-      </div>
+      <Panel>
+        <PanelHeader hasButtons={true} alignItems="center" justifyContent="space-between">
+          <div>{t('Projects')}</div>
+          <div style={{textTransform: 'none'}}>
+            <DropdownAutoComplete
+              items={otherProjects}
+              onSelect={this.handleProjectSelected}
+            >
+              {({isOpen, selectedItem}) => (
+                <DropdownButton isOpen={isOpen} size="xsmall">
+                  {t('Add Project')}
+                </DropdownButton>
+              )}
+            </DropdownAutoComplete>
+          </div>
+        </PanelHeader>
+        <PanelBody>{this.projectPanelcontents(linkedProjects)}</PanelBody>
+      </Panel>
     );
   },
 });
-
-const ProjectListElement = styled('div')`
-  padding: 0.5em 0.25em;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
 
 const RemoveIcon = styled(props => (
   <InlineSvg {...props} src="icon-circle-subtract">
@@ -172,6 +168,7 @@ const StyledPanelItem = styled(PanelItem)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 16px;
 `;
 
 export default TeamProjects;

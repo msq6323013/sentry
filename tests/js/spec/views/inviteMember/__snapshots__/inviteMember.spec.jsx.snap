@@ -58,12 +58,16 @@ exports[`CreateProject render() should render roles when available and allowed, 
 
 .glamor-14 {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 600px;
   text-transform: uppercase;
   border-bottom: 1px solid;
   border-radius: 0 0;
   line-height: 1;
-  padding: 15px 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin: 0;
 }
 
 .glamor-11 {
@@ -81,12 +85,16 @@ exports[`CreateProject render() should render roles when available and allowed, 
   -ms-flex-pack: justify;
   justify-content: space-between;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 600px;
   text-transform: uppercase;
   border-bottom: 1px solid;
   border-radius: 0 0;
   line-height: 1;
-  padding: 15px 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin: 0;
 }
 
 .glamor-25 {

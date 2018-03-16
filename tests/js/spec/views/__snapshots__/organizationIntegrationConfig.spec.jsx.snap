@@ -56,12 +56,14 @@ exports[`OrganizationIntegrationConfig render() with one integration renders 1`]
 
 .glamor-20 {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 600px;
   text-transform: uppercase;
   border-bottom: 1px solid;
   border-radius: 0 0;
   line-height: 1;
-  padding: 8px 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: 0;
 }
 
 .glamor-17 {
@@ -79,12 +81,14 @@ exports[`OrganizationIntegrationConfig render() with one integration renders 1`]
   -ms-flex-pack: justify;
   justify-content: space-between;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 600px;
   text-transform: uppercase;
   border-bottom: 1px solid;
   border-radius: 0 0;
   line-height: 1;
-  padding: 8px 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: 0;
 }
 
 .glamor-10 {

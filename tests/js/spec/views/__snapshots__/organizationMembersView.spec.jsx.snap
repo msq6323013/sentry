@@ -52,12 +52,14 @@ exports[`OrganizationMembersView No Require Link does not have 2fa warning if us
 
 .glamor-31 {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 600px;
   text-transform: uppercase;
   border-bottom: 1px solid;
   border-radius: 0 0;
   line-height: 1;
-  padding: 15px 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 0;
 }
 
 .glamor-28 {
@@ -75,12 +77,14 @@ exports[`OrganizationMembersView No Require Link does not have 2fa warning if us
   -ms-flex-pack: justify;
   justify-content: space-between;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 600px;
   text-transform: uppercase;
   border-bottom: 1px solid;
   border-radius: 0 0;
   line-height: 1;
-  padding: 15px 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 0;
 }
 
 .glamor-19 {
@@ -1323,12 +1327,14 @@ exports[`OrganizationMembersView Require Link does not have 2fa warning if user 
 
 .glamor-31 {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 600px;
   text-transform: uppercase;
   border-bottom: 1px solid;
   border-radius: 0 0;
   line-height: 1;
-  padding: 15px 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 0;
 }
 
 .glamor-28 {
@@ -1346,12 +1352,14 @@ exports[`OrganizationMembersView Require Link does not have 2fa warning if user 
   -ms-flex-pack: justify;
   justify-content: space-between;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 600px;
   text-transform: uppercase;
   border-bottom: 1px solid;
   border-radius: 0 0;
   line-height: 1;
-  padding: 15px 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 0;
 }
 
 .glamor-19 {

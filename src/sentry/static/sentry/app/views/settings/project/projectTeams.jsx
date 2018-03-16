@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import createReactClass from 'create-react-class';
 import styled from 'react-emotion';
+import classNames from 'classnames';
+import {verticalPaddingSmall, horizontalPaddingExtaSmall} from '../../../styles/padding';
 
 import {
   addErrorMessage,
@@ -169,15 +171,19 @@ class ProjectTeams extends AsyncView {
       .map(team => ({
         value: team.id,
         searchKey: team.slug,
-        label: <TeamDropdownElement>#{team.slug}</TeamDropdownElement>,
+        label: (
+          <div className={classNames(verticalPaddingSmall, horizontalPaddingExtaSmall)}>
+            #{team.slug}
+          </div>
+        ),
       }));
 
     let menuHeader = (
       <StyledTeamsLabel>
         {t('Teams')}
-        <StyledCreateTeamLink to={`/organizations/${orgId}/teams/new/`}>
+        <Link to={`/organizations/${orgId}/teams/new/`} style={{float: 'right'}}>
           {t('Create Team')}
-        </StyledCreateTeamLink>
+        </Link>
       </StyledTeamsLabel>
     );
 
@@ -206,8 +212,14 @@ class ProjectTeams extends AsyncView {
     let {orgId, projectId} = this.props.params;
     let access = new Set(this.props.organization.access);
 
-    return (
-      <PanelBody>
+    return [
+      <PanelHeader key={'header'} hasButtons={true}>
+        <PanelHeaderContent>
+          <div>{t('Team')}</div>
+          <div>{this.renderAddTeamButton()}</div>
+        </PanelHeaderContent>
+      </PanelHeader>,
+      <PanelBody key={'body'}>
         {this.state.projectTeams.map(team => {
           return (
             <TeamRow
@@ -222,7 +234,7 @@ class ProjectTeams extends AsyncView {
           );
         })}
       </PanelBody>
-    );
+    ];
   }
 
   renderBody() {
@@ -256,21 +268,6 @@ const RemoveIcon = styled(props => (
   margin-right: 0.5em;
 `;
 
-const TeamDropdownElement = styled('div')`
-  padding: 0.5em 0.25em;
-  text-transform: none;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const StyledPanelItem = styled(PanelItem)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
 const StyledTeamsLabel = styled('div')`
   width: 250px;
   font-size: 0.875em;
@@ -278,9 +275,16 @@ const StyledTeamsLabel = styled('div')`
   text-transform: uppercase;
 `;
 
-const StyledCreateTeamLink = styled(Link)`
-  float: right;
-  text-transform: none;
+const PanelHeaderContent = styled('div')`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const StyledPanelItem = styled(PanelItem)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export default ProjectTeams;
