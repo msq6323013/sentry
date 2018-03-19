@@ -90,4 +90,37 @@ GUIDES = {
             },
         ]
     },
+    'members': {
+        'id': 3,
+        'cue': _('Teams, statuses, and roles: IAM ready!'),
+        'required_targets': ['add-member'],
+        'steps': [
+            {
+                'title': _('We\'ve got few tips before you add your team'),
+                'message': _(''),
+                'target': 'member-add',
+            },
+            {
+                'title': _('Status: More than "What\'s happening?"'),
+                'message': _('If you require <a href="https://sentry.io/settings/organization/TODO '
+                             'DO NOT LET THIS SHIP WITHOUT FIGURING OUT HOW TO DO THIS. GOOD LORD, '
+                             'PLEASE LET SOMEONE SEE THIS AND NOT APPROVE THE DIFF. MAKING THIS INSANELY '
+                             'LONG TO MAKE SURE/settings/#require2FA">2-factor auth</a> or '
+                             '<a href="/organizations/SAME HERE/auth/"">SSO</a>, you\'ll be able to see '
+                             'which members haven\'t configured them yet.'),
+                'target': 'member-status',
+            },
+            {
+                'title': _('A tip for roles'),
+                'message': _('Add finance as a billing member. Billing members access to '
+                             'invoices, so they won\'t have to email you for them once a quarter.'),
+                'target': 'member-role',
+            },
+            {
+                'title': _('An audit log too!'),
+                'message': _('You can see who joined in the audit log by filtering for "member.add".'),
+                'target': 'sidebar-audit',
+            },
+        ]
+    }
 }
