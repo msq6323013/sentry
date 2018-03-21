@@ -38,7 +38,7 @@ GUIDES = {
                 'title': _('Resolution'),
                 'message': _(
                     'Resolving an issue removes it from the default dashboard view of unresolved '
-                    'issues. You can ask Sentry to <a href="/settings/account/notifications/"> '
+                    'issues. You can ask Sentry to <a href="/settings/account/notifications/" target="_blank"> '
                     'alert you</a> when a resolved issue re-occurs.'),
                 'target': 'resolve',
             },
@@ -47,7 +47,7 @@ GUIDES = {
                 'message': _(
                     'This is a unique identifier for the issue, and can be included in a commit '
                     'message to tell Sentry to resolve the issue when the commit gets deployed. '
-                    'See <a href="https://docs.sentry.io/learn/releases/">Releases</a> '
+                    'See <a href="https://docs.sentry.io/learn/releases/" target="_blank">Releases</a> '
                     'to learn more.'),
                 'target': 'issue_number',
             },
@@ -55,7 +55,7 @@ GUIDES = {
                 'title': _('Issue Tracking'),
                 'message': _(
                     'Create issues within your project management tool. Sentry integrates with '
-                    '<a href="https://docs.sentry.io/integrations/">many popular tools</a>.'),
+                    '<a href="https://docs.sentry.io/integrations/" target="_blank">many popular tools</a>.'),
                 'target': 'issue_tracking',
             },
             {
@@ -86,14 +86,14 @@ GUIDES = {
                 'message': _('Sentry does this by tying together commits in the release, files '
                              'touched by those commits, files observed in the stacktrace, and '
                              'authors of those files. Learn more about releases '
-                             '<a href="https://docs.sentry.io/learn/releases/">here</a>.'),
+                             '<a href="https://docs.sentry.io/learn/releases/" target="_blank">here</a>.'),
             },
         ]
     },
 
     'event_issue': {
         'id': 3,
-        'cue': _('Learn about issues and events'),
+        'cue': _('Learn about the issue stream'),
         'required_targets': ['issues'],
         'steps': [
             {
