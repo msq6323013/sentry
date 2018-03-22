@@ -159,6 +159,7 @@ class DropdownAutoCompleteMenu extends React.Component {
                         ) : (
                           <AutoCompleteItem
                             key={item.value}
+                            index={item.index}
                             highlightedIndex={highlightedIndex}
                             {...getItemProps({item, index: item.index})}
                           >
